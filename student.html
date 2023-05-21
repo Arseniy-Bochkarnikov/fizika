@@ -18,51 +18,88 @@
 
     .container {
       max-width: 600px;
-      margin: 0 auto;
+      margin: 50px auto;
       padding: 20px;
       background-color: #fff;
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      margin-top: 50px;
     }
 
     h1 {
       text-align: center;
       color: #333;
-    }
-
-    .iframe-container {
-      position: relative;
-      padding-bottom: 56.25%; /* Задаем соотношение сторон 16:9 (высота / ширина) */
-      height: 0;
-      overflow: hidden;
-      margin-top: 20px;
-    }
-
-    .iframe-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
+      font-size: 24px;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .btn-student {
       display: block;
-      margin-top: 20px;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
       padding: 10px 20px;
       background-color: #3498db;
       color: #fff;
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      text-align: center;
       transition: background-color 0.3s ease;
     }
 
     .btn-student:hover {
       background-color: #2980b9;
+    }
+
+    /* Декоративные элементы */
+    .decor-1 {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 50px;
+      height: 50px;
+      background-color: #4CAF50;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .decor-2 {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 50px;
+      height: 50px;
+      background-color: #e74c3c;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .decor-3 {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: #9b59b6;
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+      z-index: 1;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.3);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
   </style>
 </head>
@@ -70,9 +107,9 @@
   <div class="container">
     <h1>Новые задания по физике тут</h1>
 
-    <div class="iframe-container">
-      <iframe src="https://arseniy-bochkarnikov.github.io/fizika/zadaniyauchitelya.html" allowfullscreen></iframe>
-    </div>
+    <div class="decor-1"></div>
+    <div class="decor-2"></div>
+    <div class="decor-3"></div>
 
     <input type="button" value="Я ученик" class="btn-student" onclick="redirectToStudentPage()">
   </div>
