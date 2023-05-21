@@ -17,7 +17,7 @@
     }
 
     .container {
-      max-width: 90%;
+      max-width: 600px;
       margin: 0 auto;
       padding: 20px;
       background-color: #fff;
@@ -36,6 +36,7 @@
       padding-bottom: 56.25%; /* Задаем соотношение сторон 16:9 (высота / ширина) */
       height: 0;
       overflow: hidden;
+      margin-top: 20px;
     }
 
     .iframe-container iframe {
@@ -46,6 +47,23 @@
       height: 100%;
       border: none;
     }
+
+    .btn-student {
+      display: block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-student:hover {
+      background-color: #2980b9;
+    }
   </style>
 </head>
 <body>
@@ -55,7 +73,15 @@
     <div class="iframe-container">
       <iframe src="https://arseniy-bochkarnikov.github.io/fizika/zadaniyauchitelya.html" allowfullscreen></iframe>
     </div>
+
+    <input type="button" value="Я ученик" class="btn-student" onclick="redirectToStudentPage()">
   </div>
+
+  <script>
+    function redirectToStudentPage() {
+      window.location.href = "student.html";
+    }
+  </script>
 
 </body>
 </html>
